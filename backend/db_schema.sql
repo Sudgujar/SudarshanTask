@@ -15,7 +15,8 @@ CREATE TABLE users (
   email VARCHAR(255) UNIQUE NOT NULL,
   password_hash VARCHAR(255) NOT NULL,
   address VARCHAR(400),
-  role VARCHAR(20) NOT NULL CHECK (role IN ('admin', 'user', 'owner'))
+  role VARCHAR(20) NOT NULL CHECK (role IN ('admin', 'user', 'owner')),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE stores (
